@@ -31,11 +31,12 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
+             steps {
                 echo 'Deploying the application'
-                // Add your deployment commands here if needed
-                fewgvmbm
-            }
+                script {
+                    // Intentional error introduced for demonstration
+                    sh 'exit 1'
+                }
         }
     }
 
