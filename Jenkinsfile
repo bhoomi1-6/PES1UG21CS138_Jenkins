@@ -34,6 +34,7 @@ pipeline {
             steps {
                 echo 'Deploying the application'
                 // Add your deployment commands here if needed
+                fewgvmbm
             }
         }
     }
