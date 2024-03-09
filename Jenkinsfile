@@ -20,10 +20,12 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests'
-                script {
-                    // Print the output of the .cpp file using a shell script
-                    sh "./${SRN}-1 < input.txt > output.txt"
-                    sh 'cat output.txt'
+                 script {
+                    // Execute the compiled C++ program and capture the output
+                    def programOutput = sh(script: "./${SRN}-1", returnStdout: true).trim()
+                    
+                    // Print the output of the .cpp file
+                    echo "Program Output: ${programOutput}"
                 }
             }
         }
